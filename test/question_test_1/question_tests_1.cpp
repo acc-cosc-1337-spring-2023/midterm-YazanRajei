@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
-#include "question1.h"
+#include "question4.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -11,12 +11,14 @@ TEST_CASE("test")
 	REQUIRE(test_config() == true);
 }
 
-TEST_CASE("test fibonacci sequence function")
+
+TEST_CASE("Test grade to letter function")
 {
-	REQUIRE(get_fib_sequence(5) == "0 1 1 2 3 5");
-	REQUIRE(get_fib_sequence(7) == "0 1 1 2 3 5 8");
-	REQUIRE(get_fib_sequence(10) == "0 1 1 2 3 5 8 13 21 34 55");
-	REQUIRE(get_fib_sequence(12) == "0 1 1 2 3 5 8 13 21 34 55 89 144");
+	REQUIRE(gpa_to_letter_grade(3.5) == "A");
+	REQUIRE(gpa_to_letter_grade(3.49) == "B");
+	REQUIRE(gpa_to_letter_grade(2) == "C");
+	REQUIRE(gpa_to_letter_grade(1.99) == "D");
+	REQUIRE(gpa_to_letter_grade(.99)== "F");
 
 
 }
