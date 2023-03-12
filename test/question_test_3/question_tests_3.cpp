@@ -10,3 +10,15 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE("Test distance calculations")
+{
+	double result = get_dna_p_distance("GAGCCTACTAACGGGAT","CATCGTAATGACGGCCT");
+	REQUIRE(result == .4118);
+}
+
+TEST_CASE("Second verification of distance")
+{
+	double outcome = get_dna_p_distance("GAGCCTACTAACGGGAT","GATCGTAATGACGGCCT");
+	REQUIRE(outcome ==  .3529);
+}

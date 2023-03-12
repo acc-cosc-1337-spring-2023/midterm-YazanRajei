@@ -6,7 +6,28 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("test")
+TEST_CASE("test value paramater")
 {
-	REQUIRE(test_config() == true);
+	int p1 = 3;
+	val_param(p1);
+
+	REQUIRE(p1 == 3);
+
+	int p2 = 1;
+	val_param(p1);
+
+	REQUIRE(p2 == 1);
+}
+
+TEST_CASE("test reference paramater")
+{
+	int p1 = 3;
+	ref_param(p1);
+
+	REQUIRE(p1 == 5);
+
+	int p2 = 1;
+	ref_param(p2);
+
+	REQUIRE(p2 == 5);
 }
