@@ -11,10 +11,14 @@ TEST_CASE("test")
 	REQUIRE(test_config() == true);
 }
 
-TEST_CASE("test gcd function")
+TEST_CASE("Test distance calculations")
 {
-	REQUIRE(find_gcd (15,25) == 5);
-	REQUIRE(find_gcd (16,32) == 16);
-	REQUIRE(find_gcd (159,309) == 3);
+	double result = get_dna_p_distance("GAGCCTACTAACGGGAT","CATCGTAATGACGGCCT");
+	REQUIRE(result == .4118);
+}
 
+TEST_CASE("Second verification of distance")
+{
+	double outcome = get_dna_p_distance("GAGCCTACTAACGGGAT","GATCGTAATGACGGCCT");
+	REQUIRE(outcome ==  .3529);
 }
