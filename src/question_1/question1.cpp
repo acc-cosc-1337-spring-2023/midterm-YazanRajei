@@ -1,47 +1,39 @@
-#include "question1.h"
+
 #include <iostream>
+#include "question1.h"
+
 using std::cout; using std::cin;
+using std::string;
+
 bool test_config()
 {
     return true;
 }
 
-void run_fib_number()
-{   
-    auto choice = 0;
-    do
-    {
-        
-        cout<<"Please enter a number 1-15. Or 0 to Exit\n ";
-        cin>>choice;
-        if (choice == 0)
-        {
-            cout<<"Exiting...\n";
-            return;
-        }
-
-        get_fib_number(choice);
-
-    }while(choice >= 1 || choice <= 15);
-}
-    
-    
-int get_fib_number(int input)
+string gpa_to_letter_grade(double num)
 {
-    int num1 = 0;
-    int num2 = 1;
-    int fib_term;
-   
-
-   for (int i = 2; i <= input; i++)
-   {
-        fib_term = num1 + num2;
-        num1 = num2;
-        num2 = fib_term;
-
-   }
-   cout << fib_term << "\n";
-   return fib_term;
+    string result;
+    if(num >= 3.5 && num <= 4)
+    {
+        result = "A";
+    }
+    else if(num >= 3 && num <= 3.49)
+    {
+        result = "B";
+    }
+    else if(num >= 2 && num <= 2.99)
+    {
+        result = "C";
+    }
+    else if(num >= 1 && num <= 1.99)
+    {
+        result = "D";
+    }
+    else if(num >= 0 && num <= 0.99)
+    {
+        result = "F";
+    }
     
+    return result;
 
 }
