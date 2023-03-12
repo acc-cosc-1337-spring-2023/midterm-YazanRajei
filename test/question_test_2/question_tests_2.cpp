@@ -10,3 +10,12 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+
+TEST_CASE("Test get fib number function")
+{
+	REQUIRE(get_fib_number(5) == 5);
+	REQUIRE(get_fib_number(7) == 13);
+	REQUIRE(get_fib_number(10) == 55);
+	REQUIRE(get_fib_number(12) == 144);
+}
