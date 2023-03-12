@@ -1,13 +1,17 @@
 #include "question2.h"
 #include <iostream>
 
-using std::cin; using std::cout;
+using std::cout;
 
 int main()
 {
-    
-display_get_fib_number();
+    int p2 = 10;
+    val_param(p2);
+    std::cout << p2 << "\n";
 
+    int p3 = 10;
+    ref_param(p3);
+    std::cout << p3 << "\n";
 
     return 0;
 }
