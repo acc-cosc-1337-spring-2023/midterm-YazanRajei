@@ -1,29 +1,36 @@
-#include "question1.h"
+#include<iostream>
+#include<string>
+#include "question4.h"
 
-using std:: cin; using std::cout; 
+using std::cout; using std::cin;
+using std::string;
+
 int main()
 {
+    double num = 0;
+    auto choice = 'y';
 
-int n;
-    char choice = 'y';
-
-    while (choice == 'y') 
+    do
     {
-        cout << "Enter a positive integer between 1 and 15: ";
-        cin >> n;
+        cout<<"\nEnter your gpa score (0-4): ";
+        cin>>num;
 
-        while (n < 1 || n > 15) {
-            cout << "Invalid input. Please enter a positive integer between 1 and 15: ";
-            cin >> n;
+        while (num < 0 || num > 4)
+        {
+            cout<<"\nInvalid Number...";
+            cout<<"\nEnter your gpa score (0-4): ";
+            cin>>num;
         }
 
-        string sequence = get_fib_sequence(n);
-        cout << "The Fibonacci sequence up to " << n << " is: " << sequence << "\n";
-
-        cout << "Do you want to continue? (y/n): ";
-        cin >> choice;
+        auto result = gpa_to_letter_grade(num);
+        cout<<"Your grade is: "<<result<<"\n";
+        cout<<"Enter y to exit, any key to continue: ";
+        cin>>choice;
         
-    }
+    } 
+    while(choice !='y' && choice != 'Y');
+
+    cout<<"Bye..."<<"\n";
 
     return 0;
-    }
+}
