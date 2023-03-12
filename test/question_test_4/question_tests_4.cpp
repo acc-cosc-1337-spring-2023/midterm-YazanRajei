@@ -6,19 +6,16 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("test")
+TEST_CASE("Test 1 - Question 1")
 {
-	REQUIRE(test_config() == true);
+	REQUIRE(get_hours(1570846218) == 2);
+	REQUIRE(get_minutes(1570846218) == 10);
+	REQUIRE(get_seconds(1570846218) == 18);
 }
 
-
-TEST_CASE("Test grade to letter function")
+TEST_CASE("Test 1")
 {
-	REQUIRE(gpa_to_letter_grade(3.5) == "A");
-	REQUIRE(gpa_to_letter_grade(3.49) == "B");
-	REQUIRE(gpa_to_letter_grade(2) == "C");
-	REQUIRE(gpa_to_letter_grade(1.99) == "D");
-	REQUIRE(gpa_to_letter_grade(.99)== "F");
-
-
+	REQUIRE(get_hours(1570875018) == 10);
+	REQUIRE(get_minutes(1570875018) == 10);
+	REQUIRE(get_seconds(1570875018) == 18);
 }
